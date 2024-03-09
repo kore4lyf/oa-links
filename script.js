@@ -4,7 +4,9 @@ const getOne = elemName => document.querySelector(elemName);
 const getAll = elemName => document.querySelectorAll(elemName);
 
 
-const searchBox = getOne('.search__box ')
+const searchBox = getOne('.search__box')
+const searchBoxWrap = getOne('.search__box__wrap')
+const searchIcon = getOne('.search__icon')
 const search = getOne('.search')
 const searchResult = getOne('.search__result')
 const searchResultList = getOne('.search__result ul')
@@ -40,13 +42,19 @@ const getMatchingLinks = (keyword) => {
     return links
 }
 
-// console.log(getAll[0])
+
+searchIcon.addEventListener('click', () => {
+    searchBox.focus()
+})
 
 searchBox.addEventListener(
     'focus',
     () => {
         // Change Search Box Color to green
-        searchBox.style.borderColor = 'green'
+        searchBoxWrap.style.borderColor = 'green'
+
+        // Change Search Icon Color to green
+        searchIcon.style.color = 'green'
 
         // Hide Search Result
         searchResultList.classList.remove('hide')
@@ -56,7 +64,10 @@ searchBox.addEventListener(
     'blur',
     () => {
         // Change Search Box Color to black
-        searchBox.style.borderColor = 'black'
+        searchBoxWrap.style.borderColor = 'black'
+
+        // Change Search Icon Color to black
+        searchIcon.style.color = 'black'
     })
 
 
