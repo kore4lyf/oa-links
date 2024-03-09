@@ -135,7 +135,7 @@ p {
     display: grid;
     place-content: center;
     position: absolute;
-    top: 70%;
+    top: 65%;
     left: 0;
     right: 0;
 }
@@ -147,13 +147,32 @@ p {
     list-style: none;
     min-width: 250px;
     padding-left: 0;
+    max-height: 14.74rem;
+    overflow-y: scroll;
     position: relative;
     z-index: 5;
+    
+    
+}
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: #fafafa;
+    }
+
+::-webkit-scrollbar-thumb {
+    background: lightgray;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: dimgray;
 }
 
 .search__result li {
     padding-block: .5rem;
-    padding-inline: .5rem;
+    padding-inline: 1rem;
     border-bottom: 1px solid lightgray;
 }
 
@@ -169,7 +188,6 @@ p {
     box-shadow: none;
     font-size: .9rem;
     font-weight: normal;
-    padding: .5rem;
 }
 
 .search__result ul li:last-child {
@@ -182,7 +200,6 @@ p {
     color: dimgray;
     font-size: 1rem;
     padding: 1rem;
-
 }
 
 .no-result {
